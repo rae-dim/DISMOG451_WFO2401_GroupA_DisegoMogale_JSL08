@@ -12,15 +12,15 @@ let bankBranchInstance = null;
 
 // 4. Add methods to the `BankBranch` class for managing branch-related information. For example, you can add a method like `getBranchInfo` to retrieve branch details.
 class BankBranch {
-    constructor(branchInfo, branchCode) {
-        if (!BankBranch.bankBranchInstance) {
+    constructor(branchInfo, branchCode) { //the constructor runs automatically each time a new branch object is created
+        if (!BankBranch.bankBranchInstance) { //the singleton pattern used here ensures that only one instance of the "BankBranch" class can exist
             this.branchInfo = branchInfo;
             this.branchCode = branchCode;
             BankBranch.bankBranchInstance = this;
         }
         return BankBranch.bankBranchInstance
     }
-    getBrachInfo() {
+    getBrachInfo() { //??
         return {
             branchInfo: this.branchInfo, 
             branchCode: this.branchCode
